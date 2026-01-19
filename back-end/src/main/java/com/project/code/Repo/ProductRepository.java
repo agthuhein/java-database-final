@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
@@ -27,7 +28,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     Product findByName(String name);
 
     // Find a product by ID
-    //Product findById(Long id);
+    Optional<Product> findById(Long id);
 
     // Find products by name pattern for a specific store
     @Query("SELECT i.product FROM Inventory i WHERE i.store.id = :storeId AND LOWER(i.product.name) LIKE LOWER(CONCAT('%', :pname, '%'))")
