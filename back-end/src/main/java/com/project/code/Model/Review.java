@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Review {
 
     @Id
-    private String id;  // MongoDB unique identifier
+    private Long id;  // MongoDB unique identifier
 
     @NotNull(message = "Customer cannot be null")
     private Long customerId;
@@ -39,11 +39,11 @@ public class Review {
 
     // Getters and Setters
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
