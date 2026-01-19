@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: code
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/inventory
+    username: root
+    password: root12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/reviews
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  health:
+    db:
+      enabled: true
